@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AERIX</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<script src="/static/intro.js"></script>
+
+<body>
+  <div class="app"> 
+    <header>
+      <h1>AERIX</h1>
+      <p class="subtitle">Simulated Vertex AI + Gemini monitoring</p>
+      <button id="toggleBtn">Start Protection</button>
+    </header>
+
+    <section class="stats">
+      <div>CPU: <span id="cpu">0%</span></div>
+      <div>Memory: <span id="mem">0%</span></div>
+      <div>Blocked: <span id="blocked">0</span></div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h3>🌐 Monitor Websites (Google Safe Browsing)</h3>
+        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+          <input type="url" id="urlInput" placeholder="Enter website (e.g., google.com)" style="flex: 1; padding: 8px; border: 1px solid #4a5; border-radius: 4px;">
+          <button onclick="checkUrl()" style="padding: 8px 15px; background: #4a5; color: white; border: none; border-radius: 4px; cursor: pointer;">Check</button>
+          <button onclick="addDomain()" style="padding: 8px 15px; background: #25f; color: white; border: none; border-radius: 4px; cursor: pointer;">Monitor</button>
+        </div>
+        <div id="checkResult" style="margin-bottom: 10px; padding: 10px; background: #1a1a1a; border-radius: 4px; min-height: 20px; color: #4a5;"></div>
+        <h4>Monitored Domains:</h4>
+        <div id="monitoredList" class="list"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Threat Log</h3>
+      <div id="threatList" class="list mono"></div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+
+<!-- Intro Loading Screen -->
+<div id="introOverlay">
+  <div class="introBox">
+    <h1>Team Astros</h1>
+    <h2>Presenting <span>AERIX</span></h2>
+    <p>Initializing AI Security Engine...</p>
+    <div class="loader"></div>
+  </div>
+</div>
+
+</html>
